@@ -1,3 +1,3 @@
 import { SignUp } from "./SignUp";
-
-export { SignUp };
+import { FindResults } from "./FindResults"
+export { SignUp, FindResults };

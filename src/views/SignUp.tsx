@@ -4,13 +4,16 @@ import {Input, Button} from "../components";
 
 const Header: React.FC = () => {
     return(
-        <View>
+        <View style={headerStyle.container}>
             <Text style={headerStyle.text}>Sign Up</Text>
         </View>
     );
 };
 
 const headerStyle = StyleSheet.create({
+    container:{
+        marginTop:20,
+    },
     text:{
         fontSize: 34,
         lineHeight: 34,
@@ -20,8 +23,13 @@ const headerStyle = StyleSheet.create({
 });
 
 const Footer: React.FC = () => {
-    return <View style={{backgroundColor: "red", height: 120}} />
-};
+    return (
+        <View style={{backgroundColor: "red", height: 120}} >
+            <Button title="Google" onPress={() => alert("Sign up")} />
+            <Button title="Facebook" onPress={() => alert("Sign up")} />
+        </View>
+        );
+    };
 
 export const SignUp: React.FC = () => {
     return(

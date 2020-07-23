@@ -8,8 +8,8 @@ interface Props{
 
 export const Button:React.FC<Props> =({title, onPress})=>{
     return (
-    <TouchableOpacity onPress={onPress}>
-        <Text>{title}</Text>
+    <TouchableOpacity style={style.container} onPress={onPress}>
+        <Text style={style.text}>{title}</Text>
         </TouchableOpacity>
         );
 };
@@ -17,14 +17,17 @@ export const Button:React.FC<Props> =({title, onPress})=>{
 const style = StyleSheet.create({
     container: {
    
-      paddingVertical: 24,
+      paddingVertical: 12,
       paddingHorizontal: 12,
-      backgroundColor: 'palegreen',
+      marginTop:24,
+      backgroundColor: '#EF3651',
       alignItems: 'center',
       justifyContent: 'center',
+      borderRadius: 25,
     },
     text: {
-        color: "#EF3651",
-
+        color: "#F5F5F5",
+        fontSize: 14,
+        lineHeight: 20,
      }
 })

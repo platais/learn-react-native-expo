@@ -30,7 +30,8 @@ export const Input: React.FC<Props> =({label, focused = false}) =>
      container:{
         backgroundColor: '#2A2C36',
         borderRadius: 4,
-        
+        paddingBottom: 8,
+        marginBottom:8,
      },
      text:{
         color: '#E5E5E5',
