@@ -1,6 +1,9 @@
 import { SignUp } from "./SignUp";
+import { SignIn } from "./SignIn";
+import { ForgotPassword } from "./ForgotPassword";
 import { FindResults } from "./FindResults"
 import { Success } from "./Success"
 import { SuccessLight } from "./SuccessLight"
 import { Categories } from "./Categories"
+import { PaymentCards } from "./PaymentCards"
 export { SignUp, FindResults, Success };
