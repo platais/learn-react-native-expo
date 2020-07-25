@@ -1,150 +1,40 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, ScrollView, FlatList, StatusBar, StatusBarIOS } from 'react-native';
+import React from 'react';
+import "react-native-gesture-handler"
+import { View, Text, Button } from 'react-native';
 import storybook from './storybook';
-//import {Button} from "./src/components/Button";
+import {NavigationContainer} from '@react-navigation/native';
+import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import {StackNavigationProp} from "@react-navigation/stack";
 
-const IS_STORYBOOK = true;
+const Tab = createBottomTabNavigator();
 
-const skills = [
-  {
-  title: "Java",
-  logo: "😃" ,
-  hours: 5
-},
-{
-  title: "Js",
-  logo: "😃" ,
-  hours: 3
-},
-{
-  title: "C",
-  logo: "😃" ,
-  hours: 1
-},
-{
-  title: "Java",
-  logo: "😃" ,
-  hours: 5
-},
-{
-  title: "Js",
-  logo: "😃" ,
-  hours: 3
-},
-{
-  title: "C",
-  logo: "😃" ,
-  hours: 1
-},
-{
-title: "Java",
-logo: "😃" ,
-hours: 5
-},
-{
-title: "Js",
-logo: "😃" ,
-hours: 3
-},
-{
-title: "C",
-logo: "😃" ,
-hours: 1
-},
-{
-title: "Java",
-logo: "😃" ,
-hours: 5
-},
-{
-title: "Js",
-logo: "😃" ,
-hours: 3
-},
-{
-title: "C",
-logo: "😃" ,
-hours: 1
-},
-]
-// const generateRandomSkills =(n: number):SkillProps[] => {
-//   return new Array(n).map((it:number)=>({
-    
-//       title: "C" + i,
-//       logo: "😃" ,
-//       hours: 1,
-    
-//   }))
-
-//};
-interface SkillProps{
-  title: string;
-  logo: string;
-  hours: number;
-}
-const Skill: React.FC<SkillProps> =({title, logo, hours})=>{
-  const [totalHoursSpent, setTotalHoursSpent] = useState<number>(hours);
+const HomeScreen:React.FC<{ navigation: StackNavigationProp<any>}> = ({navigation}) => {
   return (
-    <View>
-      <Text>{title}</Text>
-      <Text>{logo}</Text>
-      <Text>{totalHoursSpent}</Text>
-      <TouchableOpacity onPress={() => setTotalHoursSpent(totalHoursSpent+1)}>
-        <Text>Add hour</Text>
-        </TouchableOpacity>
+    <View style={{flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>Home !</Text>
+      <Button onPress={() => navigation.navigate("Settings")} title="Go To Settings"/>
     </View>
-  )
-}
-
-function App() {
-  //const skills = generateRandomSkills(100);
-  // const[count, setCount] = useState<number>(0);
-  // const onPress = ()=>{
-  //   setCount(count+1);
-  // };
-  
-  return (
-    // <View style={styles.container}>
-    
-    // <StatusBarIOS backgroundColor="red">
-     <ScrollView contentContainerStyle={styles.container}>
-      {/* // <Text style={{fontSize:16}}>Hello world, counter is: {count}</Text>  */}
-      
-      {/* //data ={skills}
-      //renderItem={({item}) => <Skill title={skill.title} logo={skill.logo} hours={skill.hours}/>}
-      //> */}
-      <Text style={[styles.title, styles.redBold]}>My skills</Text>
-      {skills.map(skill =>(
-         <Skill key={skill.title} title={skill.title} logo={skill.logo} hours={skill.hours} />
-      ))}
-     </ScrollView>
-    ///* </StatusbarIOS> */
-  
   );
 }
-const skillStyle = StyleSheet.create({
-container:{
-  flex: 1,
-  flexDirection: "row",
-  justifyContent: "space-around",
-},
-})
 
-const styles = StyleSheet.create({
-  container: {
- 
-    paddingVertical: 24,
-    paddingHorizontal: 12,
-    backgroundColor: 'palegreen',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title:{
-    fontSize:36
-  },
-  redBold:{
-  color:"red",
-  },
-});
+const SettingsScreen:React.FC =() => {
+  return (
+    <View style={{flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>Settings! </Text>
+    </View>
+  );
+}
 
-export default (IS_STORYBOOK ? storybook : App)
+export const App: React.FC =() => {
+  return(
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen name="Home" component={HomeScreen} />
+          <Tab.Screen name="Settings" component={SettingsScreen} />
+        </Tab.Navigator>
+      </NavigationContainer>
+  );
+};
+
+ const IS_STORYBOOK = true;
+ export default (IS_STORYBOOK ? storybook : App)

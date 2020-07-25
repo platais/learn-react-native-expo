@@ -5,7 +5,7 @@ import {Button} from "../components";
 export const Categories: React.FC = () => {
     return(
         <View style={style.container}>
-            <Text style={style.text}>Categories</Text>
+            
             
         </View>
     );
