@@ -51,13 +51,13 @@ const style = StyleSheet.create({
         color: "#F5F5F5",
         fontSize: 14,
         lineHeight: 20,
-        paddingVertical: 14,
-        textTransform: "uppercase",
+        paddingVertical: 14,    
      },
      textSmall:{
-        fontSize: 9,
+        paddingVertical: 8,
      },
      textMedium:{
-        fontSize: 16,
+        paddingVertical: 14,
+        textTransform: "uppercase",
      },
 });
