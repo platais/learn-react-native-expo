@@ -10,7 +10,8 @@ interface Props{
 }
 
 export const Button:React.FC<Props> =({title, onPress, outlined = false, size="md"})=>{
-     const wrapWithGradient = (node) => {
+    //atgriežam komponenti vai wrapojam iekšā
+     const wrapWithGradient = (node: ReactNode): ReactNode => {
          if(outlined){
              return node;
          }
