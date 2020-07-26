@@ -6,6 +6,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {StackNavigationProp} from "@react-navigation/stack";
 
+
 const Tab = createBottomTabNavigator();
 
 const HomeScreen:React.FC<{ navigation: StackNavigationProp<any>}> = ({navigation}) => {

@@ -1,17 +1,21 @@
 import React,{ ReactNode } from "react";
 import { View, Text, StyleSheet, Image} from "react-native";
 import { useCallback } from "@storybook/addons";
-// import HomeActive from "../../svg/HomeActive";
+import HomeInactive from "../assets/icons/HomeInactive";
+import CartActive from "../assets/icons/CartActive";
+import BagInactive from "../assets/icons/BagInactive";
+import HeartInactive from "../assets/icons/HeartInactive";
+import ProfileInactive from "../assets/icons/ProfileInactive";
 
 // const Home =()=> <Image source={require("..assets/icons/home.png")}>
-const Home =()=> {
-<Image 
-    style={{width:40, height:40}}
-    width={40} 
-    height={40}
-    source={{uri: "https://via.placeholder.com/120"}}
-    />
-};
+// const Home =()=> {
+// <Image 
+//     style={{width:40, height:40}}
+//     width={40} 
+//     height={40}
+//     source={{uri: "https://via.placeholder.com/120"}}
+//     />
+// };
 
 interface NavigationTabProps{
     title:string;
@@ -19,27 +23,32 @@ interface NavigationTabProps{
     icon?:ReactNode;
 }
 
-interface Props{
-    title:string;
-    onPress:()=> void;
-}
+// interface Props{
+//     title:string;
+//     onPress:()=> void;
+// }
 
-const NavigationTab:React.FC<NavigationTabProps> =({title, active})=>{
+const NavigationTab:React.FC<NavigationTabProps> =({title, active, icon})=>{
 return (
     <View style={tabStyle.container} >
+        {icon}
         <Text style={[tabStyle.text, active ? tabStyle.textActive : tabStyle.textInactive]}>{title}</Text>
     </View>
     )
 }
 export const BottomNavBar:React.FC =()=> {
+    //ar šo var salādēt visas vajadzīgās bildes tel atmina, samazinas gaidisanas laiku pie skatu ielades
+    //useCallback(() =>{
+    //   Image.prefetch("https://via.placeholder.com/120");
+    //})
     return (
        
             <View style={style.container}>
-                {/* <NavigationTab title="Home" active={false} icon={}/> */}
-                <NavigationTab title="Shop" active={true}/>
-                <NavigationTab title="Bag" active={false}/>
-                <NavigationTab title="Favourites" active={false}/>
-                <NavigationTab title="Profile" active={false}/>   
+                <NavigationTab title="Home" active={false} icon={<HomeInactive/>}/>
+                <NavigationTab title="Shop" active={true} icon={<CartActive/>}/>
+                <NavigationTab title="Bag" active={false} icon={<BagInactive/>}/>
+                <NavigationTab title="Favourites" active={false} icon={<HeartInactive/>}/>
+                <NavigationTab title="Profile" active={false} icon={<ProfileInactive/>}/>   
             </View>
     )
 };
@@ -58,7 +67,7 @@ const tabStyle = StyleSheet.create({
         lineHeight: 10,
     },
     textActive: {
-        color:"#abb4bd",
+        color:"yellow",
     },
     textInactive: {
         color:"#abb4bd",
