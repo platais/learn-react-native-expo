@@ -1,6 +1,6 @@
 import React from "react";
 import {TouchableOpacity, Text, StyleSheet} from "react-native";
-import  LinearGradient from "react-native-linear-gradient";
+import  {LinearGradient} from "expo-linear-gradient";
 
 interface Props{
     title:string;
@@ -10,13 +10,13 @@ interface Props{
 }
 
 export const Button:React.FC<Props> =({title, onPress, outlined = false, size="md"})=>{
-    const wrapWithGradient = (node: ReactNode): ReactNode => {
-        if(outlined){
-            return node;
-        }
+     const wrapWithGradient = (node) => {
+         if(outlined){
+             return node;
+         }
         return (
             <LinearGradient
-                colors={["white", "#EF3651"]}
+                colors={["#EF3651", "#EF3651"]}
                 start={{x:0, y: 0}}
                 end={{x:1, y: 1}}
                 style={[style.container, outlined ? style.outlined : style.filled]}
@@ -52,7 +52,7 @@ const style = StyleSheet.create({
         fontSize: 14,
         lineHeight: 20,
         paddingVertical: 14,
-        textTransform: "uppercase"
+        textTransform: "uppercase",
      },
      textSmall:{
         fontSize: 9,
