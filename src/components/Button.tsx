@@ -7,12 +7,12 @@ interface Props{
     onPress:()=> void;
     outlined?:boolean;
     size?:"sm" | "md";
-    icon?:ReactNode | false;
+    icon?:string | false;
 }
 
 export const Button:React.FC<Props> =({title, onPress, outlined = false, size="md", icon})=>{
     //atgriežam komponenti vai wrapojam iekšā
-     const wrapWithGradient = (node: ReactNode): ReactNode => {
+     const wrapWithGradient = (node:ReactNode): ReactNode => {
          if(outlined){
              return (
              <View style={style.outlined}>
@@ -32,15 +32,15 @@ export const Button:React.FC<Props> =({title, onPress, outlined = false, size="m
         );
     };
 
-    if(icon){
-        return(
-        <TouchableOpacity onPress={onPress} activeOpacity={0.85}>
+     if(icon){
+         return(
+         <TouchableOpacity onPress={onPress} activeOpacity={0.85}>          
             
-                <View style={[style.iconContainer]}>{icon}</View>
-            
-        </TouchableOpacity>
-        )
-    }else{
+            <View style={style.iconContainer}>{icon}</View>
+       
+         </TouchableOpacity>
+         )
+     }else{
     
     return(
         <TouchableOpacity onPress={onPress} activeOpacity={0.85}>
@@ -50,7 +50,8 @@ export const Button:React.FC<Props> =({title, onPress, outlined = false, size="m
             )}
             
         </TouchableOpacity>
-    )};
+    )
+    };
 };
 
 const style = StyleSheet.create({
@@ -58,7 +59,7 @@ const style = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
       borderRadius: 25,
-      
+      paddingHorizontal: 28
     },
     iconContainer:{
       backgroundColor: '#EF3651',

@@ -8,6 +8,7 @@ export const Hello: React.FC = () => {
         Animated.timing(color, {
             toValue: 150,
             duration: 1500,
+            useNativeDriver: false,
         }).start();
     });
 

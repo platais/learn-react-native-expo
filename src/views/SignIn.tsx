@@ -1,9 +1,10 @@
 import React from "react";
-import {ScrollView, StyleSheet, StatusBar, Text, View, Alert} from "react-native";
-import {Input, Button, BottomNavBar} from "../components";
-const IconGoogle = require("../assets/icons/Google.svg") as string;
-const IconFB = require("../assets/icons/Facebook.svg") as string;
-
+import {ScrollView, StyleSheet, Text, View, Alert} from "react-native";
+import {Input, Button} from "../components";
+// const IconGoogle = require("../assets/icons/Google.svg") as string;
+// const IconFB = require("../assets/icons/Facebook.svg") as string;
+import {IconGoogle} from "../assets/icons/Google" ;
+import {IconFB} from "../assets/icons/Facebook" ;
 const Header: React.FC = () => {
     return(
         <View style={headerStyle.container}>
@@ -25,10 +26,10 @@ const headerStyle = StyleSheet.create({
 });
 
 const Footer: React.FC = () => {
-    return (
+   return (
         <View style={footerStyle.container} > 
-            <Button title="Google" onPress={() => alert("Google")} icon={<IconGoogle/>}/>
-            <Button title="Facebook" onPress={() => alert("Facebook")} icon={<IconFB/>}/> 
+            <Button title="Google" onPress={() => alert("Google")} icon={IconGoogle}/>
+            <Button title="Facebook" onPress={() => alert("Facebook")} icon={IconFB}/> 
         </View>
         );
     };
@@ -65,9 +66,9 @@ export const SignIn: React.FC = () => {
                     <Footer/>
                 </View>
 
-                 <View style={{flex: 2, justifyContent: "flex-end"}}>
-                    <BottomNavBar/>
-                </View> 
+                  <View style={{flex: 2, justifyContent: "flex-end"}}>
+                    {/*<BottomNavBar/>*/}
+                </View>  
 
             </ScrollView>
         </>

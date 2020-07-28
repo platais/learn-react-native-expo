@@ -1,8 +1,8 @@
 import React,{ ReactNode } from "react";
 import { View, Text, StyleSheet, Image} from "react-native";
 import { useCallback } from "@storybook/addons";
-const HomeInactive = require("../assets/icons/HomeInactive.svg") as string;
-const HomeActive = require("../assets/icons/HomeActive.svg") as string; 
+const HomeInactive = require("../assets/icons/HomeInactive.svg")as string;
+const HomeActive = require("../assets/icons/HomeActive.svg") as string;
 const CartInactive = require("../assets/icons/CartInactive.svg") as string;
 const CartActive = require("../assets/icons/CartActive.svg") as string; 
 const BagInactive = require("../assets/icons/BagInactive.svg") as string;
