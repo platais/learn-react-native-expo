@@ -10,3 +10,4 @@ storiesOf("Button", module)
     .add("outlined", ()=> <Button title={"Press Me"} onPress={onPressed} outlined />)
     .add("small", ()=> <Button title={"Press Me"} onPress={onPressed} size="sm" />)
     .add("small outlined", ()=> <Button title={"Press Me"} onPress={onPressed} size="sm" outlined/>)
+   

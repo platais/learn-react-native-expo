@@ -1,6 +1,6 @@
 import React from "react";
 import {ScrollView, StyleSheet, StatusBar, Text, View, Alert} from "react-native";
-import {Input, Button} from "../components";
+import {Input, Button, BottomNavBar} from "../components";
 
 const Header: React.FC = () => {
     return(
@@ -45,8 +45,12 @@ export const SignUp: React.FC = () => {
                     <Input label="Password"/>
                     <Button title="Sign Up" onPress={() => alert("Sign up")} />
                 </View>
+                <View>
+                    <Text style={style.text}>Forgot password</Text>
+                </View>
                 <View style={{flex: 2, justifyContent: "flex-end"}}>
-                    <Footer />
+                    {/* <Footer /> */}
+                    <BottomNavBar/>
                 </View>
             </ScrollView>
         </>
@@ -58,5 +62,11 @@ const style = StyleSheet.create({
         flex: 1,
         backgroundColor: "#1E1F28",
         paddingHorizontal: 16,
+    },
+    text:{
+        fontSize: 14,
+        lineHeight: 34,
+        color: "white",
+        textAlign: "right"
     },
 });

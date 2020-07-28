@@ -6,4 +6,6 @@ import { Success } from "./Success"
 import { SuccessLight } from "./SuccessLight"
 import { Categories } from "./Categories"
 import { PaymentCards } from "./PaymentCards"
-export { SignUp, FindResults, Success };
+import { MainScreen } from "./MainScreen"
+export { SignUp, FindResults, Success, MainScreen, 
+    SignIn, ForgotPassword, SuccessLight, Categories, PaymentCards };

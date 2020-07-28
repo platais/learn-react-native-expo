@@ -10,3 +10,4 @@ import "./views/Success.stories";
 import "./views/SuccessLight.stories";
 import "./views/Categories.stories";
 import "./views/PaymentCards.stories";
+import "./views/MainScreen.stories";

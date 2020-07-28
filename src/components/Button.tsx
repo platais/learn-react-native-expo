@@ -1,38 +1,56 @@
-import React from "react";
-import {TouchableOpacity, Text, StyleSheet} from "react-native";
+import React,{ReactNode} from "react";
+import {TouchableOpacity, Text, View, StyleSheet} from "react-native";
 import  {LinearGradient} from "expo-linear-gradient";
 
 interface Props{
-    title:string;
+    title?:string;
     onPress:()=> void;
     outlined?:boolean;
     size?:"sm" | "md";
+    icon?:ReactNode | false;
 }
 
-export const Button:React.FC<Props> =({title, onPress, outlined = false, size="md"})=>{
+export const Button:React.FC<Props> =({title, onPress, outlined = false, size="md", icon})=>{
     //atgriežam komponenti vai wrapojam iekšā
      const wrapWithGradient = (node: ReactNode): ReactNode => {
          if(outlined){
-             return node;
+             return (
+             <View style={style.outlined}>
+                 {node}
+            </View>
+            );
          }
         return (
             <LinearGradient
-                colors={["#EF3651", "#EF3651"]}
+                colors={["#EF3651", "#EF8641"]}
                 start={{x:0, y: 0}}
-                end={{x:1, y: 1}}
+                end={{x:2, y: 2}}
                 style={[style.container, outlined ? style.outlined : style.filled]}
             >
                 {node}
             </LinearGradient>
         );
     };
-    return(    
+
+    if(icon){
+        return(
         <TouchableOpacity onPress={onPress} activeOpacity={0.85}>
-            {wrapWithGradient(
-                <Text style={[style.text, size === "sm" ? style.textSmall : style.textMedium]}>{title}</Text>,
-            )}    
+            
+                <View style={[style.iconContainer]}>{icon}</View>
+            
         </TouchableOpacity>
-    );
+        )
+    }else{
+    
+    return(
+        <TouchableOpacity onPress={onPress} activeOpacity={0.85}>
+            
+             {wrapWithGradient(
+                <Text style={[style.text, size === "sm" ? style.textSmall : style.textMedium]}>{title}</Text>
+            )}
+            
+        </TouchableOpacity>
+    )};
 };
 
 const style = StyleSheet.create({
@@ -40,13 +58,27 @@ const style = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
       borderRadius: 25,
+      
+    },
+    iconContainer:{
+      backgroundColor: '#EF3651',
+      alignSelf: 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: 25,
+      paddingVertical: 14,
+      paddingHorizontal: 28,
     },
     filled:{
       backgroundColor: '#EF3651',
     },
     outlined:{
-        borderColor: "red",
+        borderColor: "#EF3651",
         borderWidth: 1.5,
+        borderRadius: 25,
+        alignItems: 'center',
+        justifyContent: 'center',
+        
     },
     text: {
         color: "#F5F5F5",

@@ -5,7 +5,7 @@ import storybook from './storybook';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {StackNavigationProp} from "@react-navigation/stack";
-
+import {PaymentCards} from "./src/views/PaymentCards";
 
 const Tab = createBottomTabNavigator();
 
@@ -31,7 +31,7 @@ export const App: React.FC =() => {
       <NavigationContainer>
         <Tab.Navigator>
           <Tab.Screen name="Home" component={HomeScreen} />
-          <Tab.Screen name="Settings" component={SettingsScreen} />
+          <Tab.Screen name="Settings" component={SettingsScreen}/>
         </Tab.Navigator>
       </NavigationContainer>
   );
