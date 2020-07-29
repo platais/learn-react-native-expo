@@ -1,8 +1,6 @@
 import React from "react";
 import {ScrollView, StyleSheet, Text, View, Alert} from "react-native";
 import {Input, Button} from "../components";
-// const IconGoogle = require("../assets/icons/Google.svg") as string;
-// const IconFB = require("../assets/icons/Facebook.svg") as string;
 import IconGoogle from "../assets/icons/Google.svg" ;
 import IconFB from "../assets/icons/Facebook.svg" ;
 const Header: React.FC = () => {
@@ -67,7 +65,7 @@ export const SignIn: React.FC = () => {
                 </View>
 
                   <View style={{flex: 2, justifyContent: "flex-end"}}>
-                    {/* <BottomNavBar/> */}
+                    
                 </View>  
 
             </ScrollView>

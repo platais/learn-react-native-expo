@@ -1,8 +1,6 @@
 import React from "react";
 import {Text, View, StyleSheet} from "react-native";
-import {NavigationContainer} from '@react-navigation/native';
 import {StackNavigationProp} from "@react-navigation/stack";
-import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {Button} from "../components/Button";
 import { CategoryCard } from "../components";
 
