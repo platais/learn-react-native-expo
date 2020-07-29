@@ -8,13 +8,13 @@ import {StackNavigationProp} from "@react-navigation/stack";
 import {PaymentCards} from "./src/views/PaymentCards";
 import {MainScreen} from "./src/views/MainScreen";
 import {SignIn} from "./src/views/SignIn";
-import {BottomNavBarTwo} from "./src/components/BottomNavBarTwo";
+import {BottomNavBar} from "./src/components/BottomNavBar";
 
 const Tab = createBottomTabNavigator();
 
 export const App: React.FC =() => {
   return(
-      <BottomNavBarTwo/>
+      <BottomNavBar/>
   );
 };
 

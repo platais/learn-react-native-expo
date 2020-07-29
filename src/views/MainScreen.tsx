@@ -11,8 +11,8 @@ export const MainScreen: React.FC<{ navigation: StackNavigationProp<any>}> = ({n
     return(
         <View style={{flex: 1, justifyContent: "center", alignItems: "center" }}>
         <Text>Home !</Text>
-        <Button onPress={() => navigation.navigate("Settings")} title="Go To Settings"/>
-        <CategoryCard title="Some text here" onPress={() => navigation.navigate("Settings")}/>
+        <Button onPress={() => navigation.navigate("Profile")} title="Go To Settings" />
+        <CategoryCard title="Some text here" onPress={() => navigation.navigate("Profile")}/>
        </View>
     )
 };
