@@ -1,11 +1,14 @@
 import React from "react";
 import {Text, View, StyleSheet} from "react-native";
+import {NavigationContainer} from '@react-navigation/native';
+import {StackNavigationProp} from "@react-navigation/stack";
 import {Button} from "../components";
+import {CategoryCard} from "../components/CategoryCard";
 
-export const Categories: React.FC = () => {
+export const Categories:React.FC<{ navigation: StackNavigationProp<any>}> = ({navigation}) => {
     return(
         <View style={style.container}>
-            
+            <CategoryCard title="Some text here" onPress={() => navigation.navigate("Profile")}/>
             
         </View>
     );

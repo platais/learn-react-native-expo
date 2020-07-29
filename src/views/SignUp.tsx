@@ -1,6 +1,6 @@
 import React from "react";
 import {ScrollView, StyleSheet, StatusBar, Text, View, Alert} from "react-native";
-import {Input, Button, BottomNavBar} from "../components";
+import {Input, Button, BottomNavBar} from "../components/";
 
 const Header: React.FC = () => {
     return(

@@ -7,6 +7,7 @@ import {StackNavigationProp} from "@react-navigation/stack";
 import {createStackNavigator} from '@react-navigation/stack';
 import {MainScreen} from "../views/MainScreen";
 import {SignIn} from "../views/SignIn";
+import {Categories} from "../views/Categories";
 import {PaymentCards} from "../views/PaymentCards";
 import HomeInactive from "../assets/icons/HomeInactive.svg";
 import HomeActive from "../assets/icons/HomeActive.svg"; 
@@ -28,7 +29,7 @@ export const BottomNavBar: React.FC =() => {
         <Tab.Screen name="Home" component={MainScreen} options={{tabBarIcon:({ focused }) => (focused?<HomeActive />:<HomeInactive />)}} />
         <Tab.Screen name="Shop" component={MainScreen} options={{tabBarIcon:({ focused }) => (focused?<CartActive/>:<CartInactive/>)}} />
         <Tab.Screen name="Bag" component={SignIn} options={{tabBarIcon:({ focused }) => (focused?<BagActive/>:<BagInactive/>)}}/>
-        <Tab.Screen name="Favourites" component={SignIn} options={{tabBarIcon:({ focused }) => (focused?<HeartActive/>:<HeartInactive/>)}}/>
+        <Tab.Screen name="Favourites" component={Categories} options={{tabBarIcon:({ focused }) => (focused?<HeartActive/>:<HeartInactive/>)}}/>
         <Tab.Screen name="Profile" component={PaymentCards} options={{tabBarIcon:({ focused }) => (focused?<ProfileActive />:<ProfileInactive />)}}/>
       </Tab.Navigator>
     </NavigationContainer>
