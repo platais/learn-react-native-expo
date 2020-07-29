@@ -1,16 +1,16 @@
 import React,{ ReactNode } from "react";
 import { View, Text, StyleSheet, Image} from "react-native";
 import { useCallback } from "@storybook/addons";
-const HomeInactive = require("../assets/icons/HomeInactive.svg")as string;
-const HomeActive = require("../assets/icons/HomeActive.svg") as string;
-const CartInactive = require("../assets/icons/CartInactive.svg") as string;
-const CartActive = require("../assets/icons/CartActive.svg") as string; 
-const BagInactive = require("../assets/icons/BagInactive.svg") as string;
-const BagActive = require("../assets/icons/BagActive.svg") as string; 
-const HeartInactive = require("../assets/icons/HeartInactive.svg") as string;
-const HeartActive = require("../assets/icons/HeartActive.svg") as string;
-const ProfileInactive = require("../assets/icons/ProfileInactive.svg") as string;
-const ProfileActive = require("../assets/icons/ProfileActive.svg") as string;
+import HomeInactive from "../assets/icons/HomeInactive.svg";
+import HomeActive from "../assets/icons/HomeActive.svg";
+import CartInactive from "../assets/icons/CartInactive.svg";
+import CartActive from "../assets/icons/CartActive.svg";
+import BagInactive from "../assets/icons/BagInactive.svg";
+import BagActive from "../assets/icons/BagActive.svg";
+import HeartInactive from "../assets/icons/HeartInactive.svg";
+import HeartActive from "../assets/icons/HeartActive.svg";
+import ProfileInactive from "../assets/icons/ProfileInactive.svg";
+import ProfileActive from "../assets/icons/ProfileActive.svg";
 
 // const Home =()=> <Image source={require("..assets/icons/home.png")}>
 // const Home =()=> {

@@ -4,7 +4,7 @@ import {View, TextInput, Text, StyleSheet} from "react-native";
 interface Props{
     label:string;
     focused?:boolean;
-
+ 
 }
 export const Input: React.FC<Props> =({label, focused = false}) => 
 {

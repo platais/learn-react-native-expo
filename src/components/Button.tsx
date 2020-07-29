@@ -7,7 +7,7 @@ interface Props{
     onPress:()=> void;
     outlined?:boolean;
     size?:"sm" | "md";
-    icon?:string | false;
+    icon?:ReactNode | false;
 }
 
 export const Button:React.FC<Props> =({title, onPress, outlined = false, size="md", icon})=>{

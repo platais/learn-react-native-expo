@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {StackNavigationProp} from "@react-navigation/stack";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {Button} from "../components/Button";
+import { CategoryCard } from "../components";
 
 
 export const MainScreen: React.FC<{ navigation: StackNavigationProp<any>}> = ({navigation}) => {
@@ -11,7 +12,8 @@ export const MainScreen: React.FC<{ navigation: StackNavigationProp<any>}> = ({n
         <View style={{flex: 1, justifyContent: "center", alignItems: "center" }}>
         <Text>Home !</Text>
         <Button onPress={() => navigation.navigate("Settings")} title="Go To Settings"/>
-      </View>
+        <CategoryCard title="Some text here" onPress={() => navigation.navigate("Settings")}/>
+       </View>
     )
 };
 

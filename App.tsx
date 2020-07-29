@@ -18,5 +18,5 @@ export const App: React.FC =() => {
   );
 };
 
- const IS_STORYBOOK = true;
+ const IS_STORYBOOK = false;
  export default (IS_STORYBOOK ? storybook : App)
